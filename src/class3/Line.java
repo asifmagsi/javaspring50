@@ -7,7 +7,7 @@ package class3;
 
 /**
  *
- * @author Adnan.Khadem
+ * @author Shahzad
  */
 public class Line {
 
@@ -41,7 +41,7 @@ public class Line {
     }
     
     void rotate90(){
-        start.move(0, end.y);
+        start.move(0, end.getY());
     }
 
     @Override

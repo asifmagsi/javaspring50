@@ -7,7 +7,7 @@ package class3;
 
 /**
  *
- * @author Adnan.Khadem
+ * @author Shahzad
  */
 public class PowerCalc {
 

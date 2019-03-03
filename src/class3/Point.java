@@ -7,13 +7,15 @@ package class3;
 
 /**
  *
- * @author Adnan.Khadem
+ * @author Shahzad
  */
 public class Point implements Cloneable {
 
+    private static long vCount = 0 ;
+    
     // attribute
-    double x;
-    double y;
+    private double x;
+    private double y;
 
     // properties, method, function
     // no return
@@ -28,6 +30,8 @@ public class Point implements Cloneable {
     Point(double newX, double newY) {
         x = newX;
         y = newY;
+        
+        vCount ++ ;
     }
 
     Point(Point p) {
@@ -38,7 +42,8 @@ public class Point implements Cloneable {
 
     @Override
     protected Object clone() throws CloneNotSupportedException {
-        return new Point(this.x, this.y);
+        return super.clone() ;
+//        return new Point(this.x, this.y);
     }
 
     // return
