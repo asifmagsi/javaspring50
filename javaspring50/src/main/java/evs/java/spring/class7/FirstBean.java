@@ -5,6 +5,7 @@
  */
 package evs.java.spring.class7;
 
+import evs.java.spring.class8.Person;
 import java.util.Objects;
 
 /**
@@ -14,8 +15,17 @@ import java.util.Objects;
 public class FirstBean {
 
     private String name;
+    private Person person;
 
     public FirstBean() {
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
     public String hello() {
