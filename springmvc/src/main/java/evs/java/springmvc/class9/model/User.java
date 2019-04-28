@@ -5,6 +5,8 @@
  */
 package evs.java.springmvc.class9.model;
 
+import evs.java.springmvc.class10.model.UserRole;
+
 /**
  *
  * @author shahzad
@@ -18,6 +20,7 @@ public class User {
     private Integer active;
     private String username;
     private String userpass;
+    private UserRole role ;
 
     public User() {
     }
