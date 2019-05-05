@@ -3,45 +3,48 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package evs.java.springmvc.class9.model;
+package evs.java.springmvc.class11.model;
 
+//import javax.annotation.Entity ;
 import evs.java.springmvc.class10.model.UserRole;
-import evs.java.springmvc.class11.model.UserModel;
+import evs.java.springmvc.class9.model.User;
+import javax.annotation.Generated;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author shahzad
  */
-public class User {
+@Entity
+@Table(name = "user")
+public class UserModel {
 
+    @Id
+    @Generated(value = "100")
+    @Column(name = "id")
     private Integer id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "email")
     private String email;
+    
+    @Column(name = "phone")
     private String phone;
+
+    @Column(name = "active")
     private Integer active;
+
+    @Column(name = "username")
     private String username;
+
+    @Column(name = "userpass")
     private String userpass;
-    private UserRole role ;
-
-    public User() {
-    }
-
-    public User(Integer id, String name, String email, String phone) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-    }
-
-    public User(Integer id, String name, String email, String phone, Integer active, String username, String userpass) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-        this.active = active;
-        this.username = username;
-        this.userpass = userpass;
-    }
+//    private UserRole role ;
 
     public Integer getId() {
         return id;
@@ -98,14 +101,9 @@ public class User {
     public void setUserpass(String userpass) {
         this.userpass = userpass;
     }
-
-    @Override
-    public String toString() {
-        return "User{" + "id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone + ", active=" + active + ", username=" + username + ", userpass=" + userpass + '}';
-    }
     
-    public UserModel clone() {
-        UserModel um = new UserModel() ;
+    public User clone() {
+        User um = new User() ;
         um.setName(getName());
         um.setEmail(getEmail());
         um.setId(getId());

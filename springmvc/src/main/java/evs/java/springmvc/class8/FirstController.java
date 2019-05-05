@@ -29,6 +29,9 @@ public class FirstController {
 
     @Autowired
     private UserDao userTemplate;
+    
+    @Autowired
+    private UserDao userHibernate ;
 
     @RequestMapping("/index.htm")
     public ModelAndView index() {
@@ -44,7 +47,7 @@ public class FirstController {
             @RequestParam(name = "pass", required = true) String userpass
     ) {
         String message = "Invalid Combination...";
-        User user = userTemplate.validate(username, userpass);
+        User user = userHibernate.validate(username, userpass) ; // userTemplate.validate(username, userpass);
         if (user == null) {
             return index();
         } else {
